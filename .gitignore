@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 编辑器
+.vscode/
+.idea/
+
+# 临时文件与备份
+backup/

@@ -1,0 +1,51 @@
+[
+    {
+        "date": "2026-11-16",
+        "amount": 100.0,
+        "category": "吃饭",
+        "note": "去和舍友打边炉",
+        "kind": "一次性消费"
+    },
+    {
+        "date": "2026-11-17",
+        "amount": 250.0,
+        "category": "购物",
+        "note": "买了个冰箱",
+        "kind": "投资"
+    },
+    {
+        "date": "2026-11-17",
+        "amount": 10.0,
+        "category": "充值",
+        "note": "买deepseek额度",
+        "kind": "投资"
+    },
+    {
+        "date": "2026-11-17",
+        "amount": 24.0,
+        "category": "购物",
+        "note": "买锅",
+        "kind": "投资"
+    },
+    {
+        "date": "2026-11-17",
+        "amount": 24.0,
+        "category": "购物",
+        "note": "买锅",
+        "kind": "投资"
+    },
+    {
+        "date": "2026-11-17",
+        "amount": 24.0,
+        "category": "购物",
+        "note": "买锅",
+        "kind": "消费"
+    },
+    {
+        "date": "2026-11-18",
+        "amount": 11.99,
+        "category": "吃饭",
+        "note": "塔斯叮",
+        "kind": "饮食"
+    }
+]
