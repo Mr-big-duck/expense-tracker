@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "zh-CN">
+<head>
+    <meta charset = "UTF-8">
+    <title>我的记账本</title>
+</head>
+<body>
+    <h1>我的记账本o.o</h1>
+    {% if data_list%}
+        <table border="1">
+            <tr>
+                <th>日期</th>
+                <th>分类</th>
+                <th>金额</th>
+                <th>备注</th>
+                <th>性质</th>
+            </tr>
+            {% for item in data_list %}
+            <tr>
+                <td>{{ item.date }}</td>
+                <td> {{ item.category }}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.note}}</td>
+                <td>{{item.kind}}</td>
+            </tr>
+            {% endfor%}
+        </table>
+
+        <p>共{{data_list|length}}笔</p>
+        <p>总计{{total_amount}}元</p>
+    {% else %}
+        <p style = "color:gray;">记账本内无数据</p>
+    {% endif %}
+</body>
+</html>
