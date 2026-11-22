@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ item.date }}</td>
                 <td> {{ item.category }}</td>
-                <td>{{item.amount}}</td>
+                <td>{{"%.2f"|format(item.amount)}}</td>
                 <td>{{item.note}}</td>
                 <td>{{item.kind}}</td>
             </tr>
@@ -31,5 +31,6 @@
     {% else %}
         <p style = "color:gray;">记账本内无数据</p>
     {% endif %}
+    <a href =  "/add">点击此处去记账</a>
 </body>
 </html>
