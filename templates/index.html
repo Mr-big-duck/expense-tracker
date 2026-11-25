@@ -2,35 +2,44 @@
 <html lang = "zh-CN">
 <head>
     <meta charset = "UTF-8">
+    <link rel="stylesheet" href= "{{url_for('static',filename='style.css')}}">
     <title>我的记账本</title>
 </head>
 <body>
-    <h1>我的记账本o.o</h1>
-    {% if data_list%}
-        <table border="1">
-            <tr>
-                <th>日期</th>
-                <th>分类</th>
-                <th>金额</th>
-                <th>备注</th>
-                <th>性质</th>
-            </tr>
-            {% for item in data_list %}
-            <tr>
-                <td>{{ item.date }}</td>
-                <td> {{ item.category }}</td>
-                <td>{{"%.2f"|format(item.amount)}}</td>
-                <td>{{item.note}}</td>
-                <td>{{item.kind}}</td>
-            </tr>
-            {% endfor%}
-        </table>
+    <div class="container">
+        <h1>我的记账本o.o</h1>
+        <div class="add-btn-container">
+            <a href="/add" class="add-btn">去记账</a> 
+        </div>
 
-        <p>共{{data_list|length}}笔</p>
-        <p>总计{{total_amount}}元</p>
-    {% else %}
-        <p style = "color:gray;">记账本内无数据</p>
-    {% endif %}
-    <a href =  "/add">点击此处去记账</a>
+        {% if data_list%}
+            <div class="table-wrapper">
+                <table border="1">
+                    <tr>
+                        <th>日期</th>
+                        <th>分类</th>
+                        <th>金额</th>
+                        <th>备注</th>
+                        <th>性质</th>
+                    </tr>
+                    {% for item in data_list %}
+                    <tr>
+                        <td>{{ item.date }}</td>
+                        <td> {{ item.category }}</td>
+                        <td class="amount">{{"%.2f"|format(item.amount)}}</td>
+                        <td>{{item.note}}</td>
+                        <td>{{item.kind}}</td>
+                    </tr>
+                    {% endfor%}
+                </table>
+            </div>
+
+            <p>共{{data_list|length}}笔</p>
+            <p>总计{{"%.2f"|format(total_amount)}}元</p>
+        {% else %}
+            <p style = "color:gray;">记账本内无数据</p>
+        {% endif %}
+
+    </div>
 </body>
 </html>

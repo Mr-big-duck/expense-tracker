@@ -22,28 +22,6 @@ def home():
 
 
 
-
-
-
-
-
-
-
-
-@app.route("/hi/<name>")
-def hi(name):
-    return f"hi{name}"
-
-
-
-
-
-
-
-
-
-
-
 @app.route("/add",methods=['GET','POST'])
 def add():
     if request.method == "GET":
@@ -55,8 +33,6 @@ def add():
         category = request.form.get('category')
         note = request.form.get('note')
         kind = request.form.get('kind') or "消费"
-
-        print (f"{amount}{category}{note}{kind}")
 
         if not amount or not category or not note :
             flash("金额，分类，备注不能为空")
@@ -91,7 +67,6 @@ def add():
         with open ("data.json","w",encoding = "utf-8") as f:
             json.dump(apd,f,ensure_ascii=False,indent = 4)
 
-        print ("保存成功")
 
     
     return redirect(url_for('home'))
@@ -117,4 +92,4 @@ def add():
 
 
 if __name__  == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)
